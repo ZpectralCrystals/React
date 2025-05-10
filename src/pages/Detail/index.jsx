@@ -25,10 +25,6 @@ const typeColors = {
   flying: "bg-sky-400",
 };
 
-// Pokéball decorativa
-const pokeballSVG =
-  "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/items/poke-ball.png";
-
 export default function Detail() {
   const { pokemonName } = useParams();
   const navigate = useNavigate();

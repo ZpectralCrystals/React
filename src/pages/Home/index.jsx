@@ -59,25 +59,16 @@ export default function Home() {
             className="border border-gray-300 p-5 rounded-md flex flex-col items-center hover:shadow-lg transition-shadow duration-300 bg-white"
           >
             {/* Contenedor de la imagen con tamaño fijo */}
-            <div className="h-40 w-40 flex items-center justify-center">
-              <img
-                // URL de la imagen del pokémon (usamos dream-world sprites)
-                src={`https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/dream-world/${
-                  index + 1
-                }.svg`}
-                // Texto alternativo con el nombre del pokémon
-                alt={pokemon.name}
-                // Estilos para la imagen (object-contain mantiene la relación de aspecto)
-                className="h-full w-full object-contain"
-                // Imagen de respaldo en caso de error (algunos SVG de dream-world pueden fallar)
-                onError={(e) => {
-                  e.target.onerror = null; // Prevenimos bucles de error
-                  e.target.src = `https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/${
-                    index + 1
-                  }.png`;
-                }}
-              />
-            </div>
+            <div className="w-full flex justify-center -mb-16 z-10 relative">
+  <img
+    src={`https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/${
+      index + 1
+    }.png`}
+    alt={pokemon.name}
+    className="w-48 h-48 object-contain mb-12"
+  />
+</div>
+            
             {/* Nombre del pokémon (capitalizado) */}
             <h3 className="text-center capitalize text-xl font-semibold mt-2">
               {pokemon.name}
